@@ -9,11 +9,50 @@
 </head>
 
 <body>
-    <div className="container">
+    <div class="container">
 
 
         <section id="formField">
+            <form id="toonForm">
 
+                <div class="form-group">
+                    <label for="toonName">Name</label>
+                    <input type="text" id="toonName" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="universe">Universe</label>
+                    <select class="form-control" id="universeSelect">
+                        <option>Marvel</option>
+                        <option>Capcom</option>
+                        <option>DC</option>
+                        <option>Valiant</option>
+                        <option>Millarworld</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="toonPowers">Powers</label>
+                    <input type="text" id="toonPowers" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="toonRole">Role</label>
+                    <select class="form-control" id="roleSelect">
+                        <option>Hero</option>
+                        <option>Side-Kick</option>
+                        <option>God Status!</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                        <label for="toonPowers">Movie Location</label>
+                        <input type="text" id="movieLocation" class="form-control" >
+                    </div>
+                <div class="form-group">
+                    <button id="addToon" type="button" class="btn btn-dark">Add Toon</button>
+                    <button id="showToons" type="button" class="btn btn-dark">Show Toons</button>
+                </div>
+
+            </form>
         </section>
         <section id="displayHeroes">
 
@@ -28,6 +67,9 @@
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="js/utility.js"></script>
+    <script src="js/toon.js"></script>
+    <script src="js/toonLineup.js"></script>
+    <script src="js/superToon.js"></script>
     <script src="js/main.js"></script>
 </body>
 
