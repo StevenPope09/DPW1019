@@ -1,91 +1,43 @@
-class Toon {
-    constructor(n,type,powers,health,universe) {
-        this.name = n
-        this.type = type
-        this.powers = powers
-        this.health = health
-        
-        this.universe = universe
-    }
-}
+let addHeroBtn = document.querySelector("#addToon")
+let showHeroesBtn = document.querySelector("#showToons")
+let toonForm = document.querySelector("#toonForm")
 
-class ToonLineup {
-    constructor(arr){
-        this.toonLineup = arr
-    }
-}
+let toonUni = document.querySelector("#universeSelect")
+let toonRole = document.querySelector("#roleSelect")
+let toonName = document.querySelector("#toonName")
+let powers = document.querySelector("#toonPowers")
 
-class SuperToon {
-    constructor() {
-
-    }
-}
-
-let formField = document.querySelector("#formField")
-if (formField) {
-    let formData = "";
-
-    
-
-    formData += '<form id="toonForm>'
-    formData += '<div className="form-group">'
-    formData += '<label for="universe">Universe</label>'
-    formData += '<input type="text" id="staticValue" value="Marvel">'
-
-    formData += '<label for="name">Field Two</label>'
-    formData += '<input type="text">'
-
-    formData += '<label for="fieldThree">Field Three</label>'
-    formData += '<input type="text">'
-
-    formData += '<label for="fieldFour">Field Four</label>'
-    formData += '<input type="text">'
-
-    formData += '<button  id="addHero">'+"Add Hero"+'</button>'
-    formData += '<button  id="showHeroes">'+"Show Heroes"+'</button>'
-    
-    formData += '</div>'
-    formData += '</form>'
-
-    formField.innerHTML = formData;
-    
-}
-let addHeroBtn = document.querySelector("#addHero")
-let showHeroesBtn = document.querySelector("#showHeroes")
-
-addHeroBtn.addEventListener('click', (e)=>{
+let toonLineup = [];
+// console.log(toonUni.value + " Universe");
+// console.log(toonRole.value  + " Role");
+// console.log(toonName.value + " Name");
+// console.log(powers.value + " Powers");
+addHeroBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log("Added Hero");
+    if(toonRole.value == "God Status!"){
+        console.log("God Created");
+        let superToon = new SuperToon(toonName.value)
+        console.log(`Name: ${superToon.name} Role: ${superToon.role} Powers: ${superToon.powers} Universe: ${superToon.universe} Movie Location: ${SuperToon.movieLocation}`);
+        toonLineup.push(superToon)
+        toonForm.reset()
+        return
+    }else
+    console.log("Added Toon");
+    let newToon = new Toon(toonName.value,powers.value,toonRole.value,toonUni.value)
+    toonLineup.push(newToon)
+    toonLineup.forEach(function (e){
+        console.log(`Name: ${newToon.name} Powers: ${newToon.powers} Role: ${newToon.role} Universe: ${newToon.universe} Movie Location: ${Toon.movieLocation}`)
+    })
+    toonForm.reset()
 })
 
-showHeroesBtn.addEventListener('click', (e)=> {
+showHeroesBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log("Loaded Heroes");
+    console.log("Loaded Toons");
+    let showToons = new ToonLineup(toonLineup)
+    console.log(showToons);
 })
 
-// function addHero(e) {
-//     e.preventDefault()
-//     console.log("Clicked");
-// }
-
-console.log(addHeroBtn,showHeroesBtn);
+//console.log(addHeroBtn, showHeroesBtn);
 
 
-let toonUni = document.querySelector("#staticValue")
-let test = new Toon("Steven","Super","Lots",100,toonUni.value)
-
-let displayHeroes = document.querySelector("#displayHeroes");
-
-if(displayHeroes){
-    let heroInfo = ""
-
-    heroInfo += '<h2>'+ "Hero Lineup!!"+ '</h2>'
-    heroInfo += '<p>'+ "Name: "+ test.name + '</p>'
-    heroInfo += '<p>'+ "Type: "+ test.type + '</p>'
-    heroInfo += '<p>'+ "Powers: "+ test.powers + '</p>'
-    heroInfo += '<p>'+ "Health: "+ test.health + '</p>'
-    heroInfo += '<p>'+ "Universe: "+ test.universe + '</p>'
-
-    displayHeroes.innerHTML= heroInfo
-
-}
