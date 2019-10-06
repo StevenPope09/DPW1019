@@ -15,7 +15,7 @@ addHeroBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
     //check which "sort" of toon/hero to create
-    if(toonRole.value == "God Status!"){
+    if(toonRole.value == "God"){
         console.log("God Created");
         let newSuperPerson = new Person(toonName.value)
         let superToon = new SuperToon()

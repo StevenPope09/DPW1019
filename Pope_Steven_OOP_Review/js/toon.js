@@ -8,6 +8,5 @@ class Toon extends Person {
     
 }
 movieLocal = document.querySelector("#movieLocation")
-movieLocal.value = "Netflix"
 
 Toon.movieLocation = movieLocal.value

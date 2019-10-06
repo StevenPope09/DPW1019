@@ -17,7 +17,7 @@
 
                 <div class="form-group">
                     <label for="toonName">Name</label>
-                    <input type="text" id="toonName" class="form-control" >
+                    <input type="text" id="toonName" class="form-control" required>
                 </div>
 
                 <div class="form-group">
@@ -33,19 +33,19 @@
 
                 <div class="form-group">
                     <label for="toonPowers">Attack Powers <br><em>(Numbers separated by ,)</em></label>
-                    <input type="text" id="attackPowers" class="form-control">
+                    <input type="text" id="attackPowers" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="toonRole">Role</label>
                     <select class="form-control" id="roleSelect">
                         <option>Hero</option>
                         <option>Side-Kick</option>
-                        <option>God Status!</option>
+                        <option>God</option>
                     </select>
                 </div>
                 <div class="form-group">
                         <label for="toonPowers">Movie Location</label>
-                        <input type="text" id="movieLocation" class="form-control" >
+                        <input type="text" id="movieLocation" class="form-control" value="Netflix" required >
                     </div>
                 <div class="form-group">
                     <button id="addToon" type="button" class="btn btn-dark">Add Toon</button>

@@ -2,7 +2,7 @@ class SuperToon extends Person{
     constructor(name) {
         super(name)
         this.role = "All Mighty"
-        this.powers = "EVERY POWER!"
+        this.attackpowers = [1000000]
         this.universe = "I am everywhere"
     }
 }
