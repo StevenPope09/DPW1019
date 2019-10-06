@@ -1,6 +1,6 @@
-class SuperToon {
+class SuperToon extends Person{
     constructor(name) {
-        this.name = name
+        super(name)
         this.role = "All Mighty"
         this.powers = "EVERY POWER!"
         this.universe = "I am everywhere"

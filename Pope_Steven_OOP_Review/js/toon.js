@@ -1,7 +1,7 @@
 class Toon extends Person {
-    constructor(powers,role,universe) {
-
-        this.powers = powers
+    constructor(name,powers,role,universe) {
+        super(name)
+        this.attackPowers = powers
         this.role = role
         this.universe = universe
     }
@@ -9,4 +9,5 @@ class Toon extends Person {
 }
 movieLocal = document.querySelector("#movieLocation")
 movieLocal.value = "Netflix"
+
 Toon.movieLocation = movieLocal.value
