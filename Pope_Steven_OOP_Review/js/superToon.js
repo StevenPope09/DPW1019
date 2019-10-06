@@ -7,7 +7,7 @@ class SuperToon extends Person {
         console.log('create super toon');
 
     }
-
+//methods to return values needed for objects
     getPowers() {
         return [10000];
     }

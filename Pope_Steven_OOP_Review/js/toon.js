@@ -6,7 +6,7 @@ class Toon extends Person {
         this.universe = universe
         this.stone = new Stone(stoneName);
     }
-
+//methods to return values needed for objects
     getPowers() {
         return this.attackPowers;
     }

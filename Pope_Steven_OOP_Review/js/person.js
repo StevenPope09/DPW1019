@@ -1,10 +1,10 @@
 class Person {
     constructor(name){
         this.name = name
-        console.log('create person');
+        console.log('Person Created');
 
     }
-
+//methods to return values needed for objects
     getPowers() {
         return null;
     }

@@ -13,6 +13,7 @@ let toonLineup = [];
 //addHero function to create new objects and store them in the array from above
 addHeroBtn.addEventListener('click', (e) => {
     e.preventDefault()
+    //condtional to ensure user fills out all fields of the form
     if(toonName.value == "" || powers.value == "" || stoneName.value == ""){
         alert("Please fill out all fields before adding toon")
         return
@@ -20,7 +21,7 @@ addHeroBtn.addEventListener('click', (e) => {
     //check which "sort" of toon/hero to create
     if (toonRole.value == "God") {
         console.log("God Created");
-
+        //new supertoon object
         let superToon = new SuperToon(toonName.value, stoneName.value);
         console.log(superToon.toString());
 
@@ -28,8 +29,8 @@ addHeroBtn.addEventListener('click', (e) => {
         toonForm.reset()
         return
     } else
-        console.log("Added Toon");
-
+        console.log("Created/Added Toon");
+    //new toon object
     let newToon = new Toon(toonName.value, powers.value, toonRole.value, toonUni.value, stoneName.value)
     console.log(newToon.toString());
     toonLineup.push(newToon)
@@ -40,16 +41,18 @@ addHeroBtn.addEventListener('click', (e) => {
 showHeroesBtn.addEventListener('click', (e) => {
     e.preventDefault()
     console.log("Loaded Toons");
-    console.log(toonLineup);
-
+    //console.log(toonLineup);
+    //invoke function to display heroes
     displayInfo();
 
 })
 
 function displayInfo() {
+    //function displaying toon information.
     let heroDiv = document.getElementById("displayHeroes");
     heroDiv.innerHTML = "";
     let heroInfo = "";
+    //loop to iterate through objects in toonLineup array
     for (let person of toonLineup) {
 
         heroInfo += '<div class="container">'
