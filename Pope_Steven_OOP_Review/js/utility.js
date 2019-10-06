@@ -9,4 +9,13 @@ class Utils {
         });
         return total / arr.length
     }
+
+    static desconstructStringToNumArr(str) {
+        let arrStr = str.split(",");
+        let arrNum = arrStr.map((item) => {
+            return parseInt(item);
+        })
+
+        return arrNum;
+    }
 }
